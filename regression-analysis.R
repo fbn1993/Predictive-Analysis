@@ -140,3 +140,12 @@ plot(effect("hp:wt",
             list(wt = c(2.2, 3.2, 4.2))),
      multiline = TRUE)
 
+# Evaluate the statistical assumption using the plot()
+# function.
+par(mfrow = c(2,2))
+plot(multiple_linear_model)
+
+install.packages("gvlma")
+library(gvlma)
+gv_model <- gvlma(multiple_linear_model)
+summary(gv_model)
